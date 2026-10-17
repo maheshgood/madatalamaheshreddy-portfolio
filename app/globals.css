@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-grotesk), var(--font-inter), ui-sans-serif, sans-serif;
+  --font-mono: var(--font-mono-jb), ui-monospace, monospace;
+
+  --color-ink-950: #04060c;
+  --color-ink-900: #070b14;
+  --color-ink-850: #0a101c;
+  --color-ink-800: #0e1524;
+  --color-ink-700: #172033;
+  --color-line: rgb(148 163 184 / 0.12);
+  --color-glow-cyan: #22d3ee;
+  --color-glow-teal: #2dd4bf;
+  --color-glow-indigo: #818cf8;
+  --color-glow-violet: #a78bfa;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-ink-950 text-slate-300 antialiased;
+  }
+  ::selection {
+    background: rgb(34 211 238 / 0.3);
+    color: white;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-glow-cyan);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  .glass {
+    @apply rounded-2xl border border-line bg-ink-850/70 backdrop-blur-xl;
+  }
+  .text-gradient {
+    @apply bg-gradient-to-r from-glow-cyan via-glow-teal to-glow-indigo bg-clip-text text-transparent;
+  }
+  .grid-bg {
+    background-image:
+      linear-gradient(to right, rgb(148 163 184 / 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(148 163 184 / 0.06) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, black 40%, transparent 100%);
+  }
+  .field {
+    @apply w-full rounded-xl border border-line bg-ink-900/80 px-4 py-3 text-sm text-white placeholder:text-slate-500 transition focus:border-glow-cyan/60 focus:ring-2 focus:ring-glow-cyan/20 focus:outline-none;
+  }
+  .label {
+    @apply mb-1.5 block text-xs font-medium tracking-wide text-slate-400 uppercase;
+  }
+}
+
+input[type="range"] {
+  @apply h-1.5 w-full cursor-pointer appearance-none rounded-full bg-ink-700;
+  accent-color: var(--color-glow-cyan);
+}
+input[type="range"]::-webkit-slider-thumb {
+  @apply h-4 w-4 appearance-none rounded-full bg-glow-cyan;
+  box-shadow: 0 0 0 4px rgb(34 211 238 / 0.2), 0 0 16px rgb(34 211 238 / 0.6);
+}
+input[type="range"]::-moz-range-thumb {
+  @apply h-4 w-4 rounded-full border-0 bg-glow-cyan;
+  box-shadow: 0 0 0 4px rgb(34 211 238 / 0.2), 0 0 16px rgb(34 211 238 / 0.6);
+}
