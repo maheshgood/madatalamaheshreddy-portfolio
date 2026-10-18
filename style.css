@@ -1,0 +1,34 @@
+/* =======================================================
+   COMPACT SAAS SPACING OVERRIDES (ELIMINATE EMPTY SPACE)
+   ======================================================= */
+
+/* Collapse massive vertical section gaps */
+section, 
+.section, 
+[class*="py-"], 
+[class*="my-"] {
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* Eliminate empty dark gaps between section wrappers */
+section + section, 
+div + section, 
+main > div {
+  margin-top: 0.5rem !important;
+}
+
+/* Pull headings and eyebrow badges closer to content grids */
+.eyebrow, 
+h1, h2, h3, 
+[class*="spotlight"] {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.75rem !important;
+}
+
+/* Keep grid gap sleek and dense */
+.grid {
+  gap: 1rem !important;
+}
