@@ -78,17 +78,22 @@ input[type="range"]::-moz-range-thumb {
   @apply h-4 w-4 rounded-full border-0 bg-glow-cyan;
   box-shadow: 0 0 0 4px rgb(34 211 238 / 0.2), 0 0 16px rgb(34 211 238 / 0.6);
 }
-/* FORCE COMPACT SPACING ON TAILWIND UTILITIES */
-[class*="py-"] {
+
+/* =======================================================
+   SAFE TARGETED SECTION SPACING (FIXES EMPTY GAPS ONLY)
+   ======================================================= */
+main > section,
+body > section {
   padding-top: 2rem !important;
   padding-bottom: 2rem !important;
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
 }
 
-[class*="my-"] {
-  margin-top: 1rem !important;
-  margin-bottom: 1rem !important;
-}
-
-[class*="gap-"] {
-  gap: 1rem !important;
+@media (min-width: 768px) {
+  main > section,
+  body > section {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
 }
