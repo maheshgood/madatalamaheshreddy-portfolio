@@ -97,3 +97,43 @@ body > section {
     padding-bottom: 3rem !important;
   }
 }
+
+/* =======================================================
+   CLEAN HEADER & BRAND BADGE LAYOUT FIX
+   ======================================================= */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(7, 11, 20, 0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--color-line);
+}
+
+header .container-x, 
+header > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.85rem;
+  padding-bottom: 0.85rem;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* Prevent logo and experience badge collision */
+.brand-container, 
+header .flex.items-center {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+}
+
+header .badge,
+header [class*="rounded-full"],
+header [class*="border"] {
+  background: rgba(10, 16, 28, 0.9);
+  border: 1px solid rgba(34, 211, 238, 0.25);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
