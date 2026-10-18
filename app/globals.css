@@ -139,26 +139,23 @@ header .flex.items-center {
   opacity: 1 !important;
 }
 /* =======================================================
-   FORCE FULL COLOR & REMOVE GRAY CARDS FOR BRAND LOGOS
+   PERMANENT FIX FOR BRAND CARDS & FULL-COLOR LOGOS
    ======================================================= */
 
-/* Force remove any grayscale or dark filters on brand logo images */
-section img[alt*="brand" i],
-section img[src*="logo" i],
-.grid img,
-[class*="brand"] img {
+/* Target the brand list items and remove the light white background & grayscale filter */
+ul.grid li.flex {
+  background: rgba(14, 21, 36, 0.7) !important; /* Sleek dark glass card background */
+  border: 1px solid rgba(148, 163, 184, 0.15) !important;
+  backdrop-filter: blur(12px) !important;
+  opacity: 1 !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+}
+
+/* Ensure the logo images inside are 100% full color and bright all the time */
+ul.grid li.flex img {
   filter: none !important;
   -webkit-filter: none !important;
   opacity: 1 !important;
   mix-blend-mode: normal !important;
-}
-
-/* Force dark, sleek glass containers for brand logo cards instead of light gray blocks */
-[class*="brand"] > div,
-.brand-card,
-[class*="logo-grid"] > div {
-  background: rgba(14, 21, 36, 0.7) !important;
-  border: 1px solid rgba(148, 163, 184, 0.15) !important;
-  backdrop-filter: blur(12px) !important;
-  border-radius: 1rem !important;
 }
