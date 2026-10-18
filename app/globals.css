@@ -80,7 +80,7 @@ input[type="range"]::-moz-range-thumb {
 }
 
 /* =======================================================
-   SAFE TARGETED SECTION SPACING (FIXES EMPTY GAPS ONLY)
+   SAFE TARGETED SECTION SPACING
    ======================================================= */
 main > section,
 body > section {
@@ -99,7 +99,7 @@ body > section {
 }
 
 /* =======================================================
-   CLEAN HEADER & BRAND BADGE LAYOUT FIX
+   CLEAN HEADER LAYOUT
    ======================================================= */
 header {
   position: sticky;
@@ -121,7 +121,6 @@ header > div {
   flex-wrap: wrap;
 }
 
-/* Prevent logo and experience badge collision */
 .brand-container, 
 header .flex.items-center {
   display: flex;
@@ -130,35 +129,12 @@ header .flex.items-center {
   flex-wrap: nowrap;
 }
 
-header .badge,
-header [class*="rounded-full"],
-header [class*="border"] {
-  background: rgba(10, 16, 28, 0.9);
-  border: 1px solid rgba(34, 211, 238, 0.25);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-}
 /* =======================================================
-   BRAND LOGO GRID CLEAN GLASS DISPLAY
+   FULL COLOR BRAND LOGOS (ALWAYS BRIGHT, NO HOVER REQUIRED)
    ======================================================= */
-/* Remove harsh light gray background boxes around logos */
 [class*="brand"] img,
-.brand-card,
-[class*="logo"] {
-  background: transparent !important;
-  filter: brightness(0) invert(1) opacity(0.85); /* Converts dark logos to clean white */
-  transition: filter 0.2s ease, transform 0.2s ease;
-}
-
-[class*="brand"] img:hover,
-[class*="logo"]:hover {
-  filter: brightness(0) invert(1) opacity(1);
-  transform: translateY(-2px);
-}
-
-/* Remove grey card containers if wrapped inside div elements */
-[class*="brand"] > div,
-[class*="logo-grid"] > div {
-  background: rgba(14, 21, 36, 0.6) !important;
-  border: 1px solid rgba(148, 163, 184, 0.12) !important;
-  box-shadow: none !important;
+.brand-card img,
+[class*="logo"] img {
+  filter: none !important;
+  opacity: 1 !important;
 }
