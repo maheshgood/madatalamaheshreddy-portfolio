@@ -137,3 +137,28 @@ header [class*="border"] {
   border: 1px solid rgba(34, 211, 238, 0.25);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
+/* =======================================================
+   BRAND LOGO GRID CLEAN GLASS DISPLAY
+   ======================================================= */
+/* Remove harsh light gray background boxes around logos */
+[class*="brand"] img,
+.brand-card,
+[class*="logo"] {
+  background: transparent !important;
+  filter: brightness(0) invert(1) opacity(0.85); /* Converts dark logos to clean white */
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+[class*="brand"] img:hover,
+[class*="logo"]:hover {
+  filter: brightness(0) invert(1) opacity(1);
+  transform: translateY(-2px);
+}
+
+/* Remove grey card containers if wrapped inside div elements */
+[class*="brand"] > div,
+[class*="logo-grid"] > div {
+  background: rgba(14, 21, 36, 0.6) !important;
+  border: 1px solid rgba(148, 163, 184, 0.12) !important;
+  box-shadow: none !important;
+}
